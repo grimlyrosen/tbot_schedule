@@ -11,7 +11,7 @@ from telegram.ext import Filters
 from telegram.ext import MessageHandler
 from telegram.ext import CommandHandler
 from datetime import datetime
-from tbot_schedule.ring import get_rings, get_next_lesson, get_schedule
+from ring import get_rings, get_next_lesson, get_schedule
 
 KEYBOARD_BUTTONS = [
     "Следующий урок",
