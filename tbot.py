@@ -75,7 +75,7 @@ def week_button_handler(update: Update, context: CallbackContext):
     text = f"Расписание на {DAYS[day]}\n"
     for lesson in today_schedule:
         if today_schedule[lesson]:
-            text += f'{RINGS[day][lesson].strftime("%H %M")}: {today_schedule[lesson]}\n'
+            text += f'{RINGS[day][lesson-1].strftime("%H %M")}: {today_schedule[lesson]}\n'
 
     query.edit_message_text(text=text, reply_markup=inline_keyboard())
 
@@ -89,7 +89,7 @@ def now_handler(update: Update, context: CallbackContext):
         today_schedule = SCHEDULE[weekday]
         for i in range(next_lesson, len(today_schedule)):
             if today_schedule[i]:
-                text = f"Следующий урок '{today_schedule[i]}' в {RINGS[weekday][i]}"
+                text = f"Следующий урок '{today_schedule[i]}' в {RINGS[weekday][i-1]}"
                 break
 
     return update.message.reply_text(text)

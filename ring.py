@@ -48,12 +48,12 @@ if __name__ == '__main__':
     schedule = get_schedule()
     rings = get_rings()
     next_lesson = get_next_lesson(rings, weekday, curtime)
+    print (rings)
     if next_lesson:
         today_schedule = schedule[weekday]
-        breakpoint()
-        for i in range(next_lesson,len(today_schedule)):
+        for i in range(next_lesson, len(today_schedule)):
             if today_schedule[i]:
-                print(f"Следующий урок '{today_schedule[i]}' в {rings[weekday][i]}")
+                print(f"Следующий урок '{today_schedule[i]}' в {rings[weekday][i-1]}")
                 break
         else:
             print("Сегодня уроков нет")
