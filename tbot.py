@@ -1,5 +1,3 @@
-TOKEN = "1408399142:AAE5JxpiyAaXNJ_VI8X7-IPXHOjitl82CF8"
-
 from telegram import Update
 import logging
 from telegram import ReplyKeyboardMarkup, KeyboardButton
@@ -13,6 +11,8 @@ from telegram.ext import CommandHandler
 from datetime import datetime
 from ring import get_rings, get_next_lesson, get_schedule
 
+TOKEN = "1408399142:AAE5JxpiyAaXNJ_VI8X7-IPXHOjitl82CF8"
+
 KEYBOARD_BUTTONS = [
     "Следующий урок",
     "Расписание на неделю"
@@ -22,6 +22,7 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
 )
 logger = logging.getLogger(__name__)
+
 SCHEDULE = get_schedule()
 RINGS = get_rings()
 DAYS = {1: "понедельник",
