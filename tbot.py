@@ -46,7 +46,9 @@ def start_handler(update: Update, context: CallbackContext):
                 KeyboardButton(text=KEYBOARD_BUTTONS[0]),
                 KeyboardButton(text=KEYBOARD_BUTTONS[1]),
             ]
-        ]
+        ],
+        resize_keyboard=True
+
     )
     return update.message.reply_text("Привет, нажми меня", reply_markup=reply_markup)
 
